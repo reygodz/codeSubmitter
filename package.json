@@ -1,0 +1,60 @@
+{
+  "name": "codesubmitter",
+  "displayName": "code-submitter",
+  "description": "A VS Code extension to submit code to a local server",
+  "publisher": "ReyAnthonyGodmalin",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.submitCode",
+            "title": "Submit Code"
+      }
+    ],
+    "keybindings": [
+        {
+            "command": "extension.submitCode",
+            "key": "ctrl+alt+s",
+            "when": "editorTextFocus"
+        }
+    ],
+    "configuration": {
+    "title": "Submit Code Extension",
+    "properties": {
+      "submitCode.apiAddress": {
+        "type": "string",
+        "default": "http://localhost:3000/api/submit",
+        "description": "API endpoint for submitting code."
+      }
+    }
+  }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "eslint": "^9.21.0",
+    "typescript": "^5.7.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
