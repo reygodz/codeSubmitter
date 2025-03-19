@@ -1,15 +1,20 @@
 {
-  "name": "codesubmitter",
-  "displayName": "code-submitter",
-  "description": "A VS Code extension to submit code to a local server",
-  "publisher": "ReyAnthonyGodmalin",
+  "name": "codesubmit",
+  "displayName": "Code Submit",
+  "description": "A Visual Studio Code extension that allows users to submit their code to a local or remote server directly from the editor. ",
+  "publisher": "RA_Godz",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
   },
+  "icon": "assets/icon.png",
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reygodz/codeSubmitter.git"
+  },
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
@@ -27,9 +32,9 @@
         }
     ],
     "configuration": {
-    "title": "Submit Code Extension",
+    "title": "Code Submit Extension",
     "properties": {
-      "submitCode.apiAddress": {
+      "codeSubmit.apiAddress": {
         "type": "string",
         "default": "http://localhost:3000/api/submit",
         "description": "API endpoint for submitting code."

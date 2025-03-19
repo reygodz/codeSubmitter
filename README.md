@@ -1,8 +1,8 @@
-Submit Code Extension
+**Code Submit Extension**
 
-🚀 Submit Code is a Visual Studio Code extension that allows users to submit their code to a local or remote server directly from the editor. It provides an easy-to-use status bar button and a command to send the currently open file's content to a configured API endpoint.
+🚀 Code Submit is a Visual Studio Code extension that allows users to submit their code to a local or remote server directly from the editor. It provides an easy-to-use status bar button and a command to send the currently open file's content to a configured API endpoint.
 
-🛠 Features
+**🛠 Features**
 
 🌐 Submit Code: Sends the content of the currently active file to a server.
 
@@ -12,87 +12,84 @@ Submit Code Extension
 
 🎡 Supports Any Server: Works with any API that accepts file submissions.
 
-📌 How to Install
+**📌 How to Install**
 
-Method 1: Install from VSIX (Local Installation)
+***Note: Make sure you install node fetch (npm install node-fetch)***
 
-Download the .vsix package (submit-code-extension-1.0.0.vsix).
+**Method 1:** 
 
-Open VS Code.
+- Install from VSIX (Local Installation)
+- Download the .vsix package (submit-code-extension-1.0.0.vsix).
+- Open VS Code.
+- Go to Extensions (``).
+- Click "..." (More Actions) → Install from VSIX...".
+- Select the .vsix file.
+- Done! 🎉
 
-Go to Extensions (``).
+**Method 2:** 
 
-Click "..." (More Actions) → Install from VSIX...".
+- Install via CLI
+- code --install-extension code-submit-extension-1.0.0.vsix
 
-Select the .vsix file.
+**🚀 How to Use**
 
-Done! 🎉
+**Option 1:** 
 
-Method 2: Install via CLI
+- Using the Status Bar Button
+- Open a file in VS Code.
+- Click the "Submit Code" button in the status bar (bottom right).
+- The file content is sent to the configured server.
 
-code --install-extension submit-code-extension-1.0.0.vsix
+**Option 2:** 
 
-🚀 How to Use
+- Using the Command Palette
+- Press Ctrl+Shift+P to open the Command Palette.
+- Search for "Submit Code" and select it or press CTRL+ALT+S
+- The active file content will be sent to the server.
 
-Option 1: Using the Status Bar Button
+**⚙️ Configuring the API Endpoint**
 
-Open a file in VS Code.
-
-Click the "Submit Code" button in the status bar (bottom right).
-
-The file content is sent to the configured server.
-
-Option 2: Using the Command Palette
-
-Press Ctrl+Shift+P to open the Command Palette.
-
-Search for "Submit Code" and select it.
-
-The active file will be sent to the server.
-
-⚙️ Configuring the API Endpoint
-
-By default, the extension sends requests to:
-
-http://localhost:3000/api/submit
+By default, the extension sends requests to: **http://localhost:3000/api/submit**
 
 If your server has a different address, you can update it in VS Code settings:
 
-Open File → Preferences → Settings (Ctrl + ,).
+- Open File → Preferences → Settings (Ctrl + ,).
+- Search for "Code Submit API Address".
+- Update it with your server's API address.
+- Alternatively, edit settings.json manually:
 
-Search for "Submit Code API Address".
+  {
 
-Update it with your server's API address.
+  "codeSubmit.apiAddress": "http://your-server-ip:5000/api/submit"
 
-Alternatively, edit settings.json manually:
+  }
 
-{
-  "submitCode.apiAddress": "http://your-server-ip:5000/api/submit"
-}
-
-🖥️ API Requirements
+**🖥️ API Requirements**
 
 Your server should accept a POST request at the configured API address with the following JSON payload:
 
 {
-  "fileName": "example.py",
-  "code": "print('Hello, World!')"
+
+`  `"fileName": "example.py",
+
+`  `"code": "print('Hello, World!')"
+
 }
 
 It should return a JSON response:
 
 {
-  "message": "Code received successfully!"
+
+`  `"message": "Code received successfully!"
+
 }
 
-🔧 Troubleshooting
+**🔧 Troubleshooting**
 
-No active editor found! → Open a file before running the command.
+- No active editor found! → Open a file before running the command.
+- Error submitting code → Check if your server is running and the API address is correct.
+- Status bar button is missing → Try restarting VS Code.
 
-Error submitting code → Check if your server is running and the API address is correct.
-
-Status bar button is missing → Try restarting VS Code.
-
-🐝 License
+**🐝 License**
 
 This extension is open-source and free to use.
