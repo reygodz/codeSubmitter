@@ -2,7 +2,7 @@
   "name": "codesubmit",
   "displayName": "Code Submit",
   "description": "A Visual Studio Code extension that allows users to submit their code to a local or remote server directly from the editor. ",
-  "publisher": "RA_Godz",
+  "publisher": "RAGodz",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
