@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         }
         
-        const apiAddress = vscode.workspace.getConfiguration().get<string>("submitCode.apiAddress", "http://localhost:3000/api/submit");
+        const apiAddress = vscode.workspace.getConfiguration().get<string>("codeSubmit.apiAddress", "http://localhost:3000/api/submit");
 
 
         const code = editor.document.getText();
